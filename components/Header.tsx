@@ -9,7 +9,7 @@ const Header = () => (
         margin: 0,
       }}
     >
-      Church Farm&apos;s Pick Your Own Pumpkins 🎃
+      Church Farm&apos;s Pick Your 🎃wn Pumpkins
     </h1>
   </header>
 );
