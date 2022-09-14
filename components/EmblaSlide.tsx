@@ -1,8 +1,8 @@
 import Image, { ImageProps } from "next/image";
 import { Pumpkin } from "./Pumpkins";
 
-const EmblaSlide = ({ name, url, goodFor, size, eatability }: Pumpkin) => (
-  <div className="embla__slide" key={name}>
+const EmblaSlide = ({ description, image, type, variety }: Pumpkin) => (
+  <div className="embla__slide" key={type + variety}>
     <div
       className="embla__slide__inner"
       style={{
@@ -26,85 +26,31 @@ const EmblaSlide = ({ name, url, goodFor, size, eatability }: Pumpkin) => (
               margin: 0,
             }}
           >
-            {name}
+            {variety}
           </h3>
         </div>
         <div
           className="image-div"
           style={{
-            backgroundImage: `url(${url})`,
+            backgroundImage: `url(${image})`,
             height: "100vw",
             maxHeight: 600,
           }}
         ></div>
-        <div>
-          <div
+        <div
+          style={{
+            padding: "12px",
+          }}
+        >
+          <p
             style={{
-              padding: 10,
-              display: "inline-block",
-              width: "50%",
-              verticalAlign: "top",
+              margin: 0,
+              marginLeft: 5,
+              marginTop: 5,
             }}
           >
-            <h4
-              style={{
-                margin: 0,
-              }}
-            >
-              Typical size
-            </h4>
-            <p
-              style={{
-                margin: 0,
-                marginLeft: 5,
-                marginTop: 5,
-              }}
-            >
-              {size.charAt(0).toUpperCase() + size.substr(1)}
-            </p>
-            <h4 style={{
-                marginBottom: 0,
-                 
-              }}>Tasting notes</h4>
-            <p
-              style={{
-                margin: 0,
-                marginLeft: 5,
-                marginTop: 5,
-              }}
-            >
-              {eatability}
-            </p>
-          </div>
-          <div
-            style={{
-              padding: 10,
-              display: "inline-block",
-              width: "50%",
-            }}
-          >
-            <h4
-              style={{
-                margin: 0,
-              }}
-            >
-              Good for
-            </h4>
-            {goodFor.map((words) => (
-              <div
-                key={words}
-                style={{
-                  marginLeft: 5,
-                  marginTop: 5,
-                  // paddingTop: 10,
-                  // paddingBottom: 10,
-                  // border: "1px solid lightgrey",
-                }}
-              >
-                {words}
-              </div>
-            ))}
-          </div>
+            {description}
+          </p>
         </div>
       </div>
     </div>

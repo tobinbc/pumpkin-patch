@@ -35,11 +35,13 @@ const Carousel = () => {
   return (
     <>
       <div
-        style={{
-          // display: "flex",
-          // flexDirection: "column",
-          // height: "100vh",
-        }}
+        style={
+          {
+            // display: "flex",
+            // flexDirection: "column",
+            // height: "100vh",
+          }
+        }
       >
         <div
           style={{
@@ -49,7 +51,7 @@ const Carousel = () => {
         >
           <div className="embla__viewport" ref={thumbViewportRef}>
             <div className="embla__container embla__container--thumb">
-              {pumpkins.map(({ url }, index) => (
+              {pumpkins.map(({ image }, index) => (
                 <div
                   key={String(index)}
                   className={`embla__slide embla__slide--thumb ${
@@ -60,7 +62,7 @@ const Carousel = () => {
                   <div
                     className="embla__slide__thumbnail image-div"
                     style={{
-                      backgroundImage: `url(${url})`,
+                      backgroundImage: `url(${image})`,
 
                       height: "100%",
                     }}
@@ -72,16 +74,18 @@ const Carousel = () => {
         </div>
         <div
           style={{
-            flexGrow:1
+            flexGrow: 1,
           }}
           className="embla"
         >
           <div
             className="embla__viewport"
             ref={mainViewportRef}
-            style={{
-              // overflow: "scroll",
-            }}
+            style={
+              {
+                // overflow: "scroll",
+              }
+            }
           >
             <div className="embla__container">{pumpkins.map(EmblaSlide)}</div>
           </div>
